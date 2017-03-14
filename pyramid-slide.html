@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+          #pyramid {
+            line-height: 0;
+            font-size: 30px;
+            color:magenta;
+            padding-top:1em;
+        }
+
+        body {
+            font-family: "Courier New", monospace;
+            text-align: center;
+            background-color:whitesmoke;
+            margin-right:30em;
+            margin-left:30em;
+           
+        } 
+          #value {
+            font-weight: bold;
+            font-size: 20px;
+          }  
+          input[type=range] {
+            -webkit-appearance: none;
+            border: 1px black solid;
+            background:lightgray;
+            width: auto;
+            height:4px;
+            border-radius:10px;
+}
+
+         input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            background:ivory;
+            border: black 1px solid;
+            border-radius: 100px;
+            width: 12px;
+            height: 12px;
+}
+          
+          #symbols {
+              font-weight: bold;
+              font-size: 20px;
+
+          }
+         #slider {
+             background:lightgray;
+             padding:2.5em;
+             
+              
+         }
+         #sliderBody {
+             margin-top:5em;
+             border: black 2px solid;
+         }
+         #header {
+             background: magenta;
+             height:auto;
+             padding:.5em;        
+                         
+         }
+
+         #header, h1 {
+             font-size:50px;
+         }
+    </style>
+</head>
+<body >
+<div id = "header"><h1>Pyramid Slide</h1></div>
+
+<div id = "sliderBody">
+<div id ="slider">
+<form>
+    
+    Brick Symbol:
+    <select id = "symbols" onchange = "updateTextInput(document.getElementById('value').innerHTML)">
+        <option value ="#">#</option>
+        <option value ="@">@</option>
+        <option value ="X">X</option>
+        <option value ="$">$</option>
+    </select>
+    How High?
+    <input type = "range" id= "slide" min ="1" max ="20" value = "10" oninput="updateTextInput(this.value);">
+    <span id = "value"></span>
+    
+</form>
+</div>
+ <div id="pyramid"></div>
+</div>
+    <script src="pyramid-slide.js"></script>
+</body>
+</html>
